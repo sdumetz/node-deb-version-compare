@@ -1,10 +1,23 @@
 # node-deb-version-compare
-Compare packages version according to debian versionning standard
+Compare packages version according to debian versionning standard (Debian Policy).
+
+## Usage
+
+    var compare = require("deb-version-compare");
+    compare("1.0.0","1.0.1") //return 1
+    compare("1.0.0","1.0.0") //return 0
+    compare("1.0.0~rc1","1.0.0") //return -1
+    compare("2:1.0.0","1:2.0.0") //return 1
+
+For a full list of tested cases, look at the [tests](https://github.com/sdumetz/node-deb-version-compare/blob/master/test/test.js).
+
+Will correctly order special characters (`~ - . :`), detect *debian_version* and *epoch* when needed.
 
 ## Debian Policy
 
 *Copy made on 03/04/2016. Original can be found [here](https://www.debian.org/doc/debian-policy/ch-controlfields.html#s-f-Version)*
 
+```
 The version number of a package. The format is: [epoch:]upstream_version[-debian_revision]
 
 The three components here are:
@@ -41,3 +54,4 @@ Then the initial part of the remainder of each string which consists entirely of
 These two steps (comparing and removing initial non-digit strings and initial digit strings) are repeated until a difference is found or both strings are exhausted.
 
 Note that the purpose of epochs is to allow us to leave behind mistakes in version numbering, and to cope with situations where the version numbering scheme changes. It is not intended to cope with version numbers containing strings of letters which the package management system cannot interpret (such as ALPHA or pre-), or with silly orderings.[38]
+```
