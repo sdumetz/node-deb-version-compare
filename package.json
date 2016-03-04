@@ -1,0 +1,28 @@
+{
+  "name": "deb-version-compare",
+  "version": "0.0.1",
+  "description": "Compare Version according to debian policy",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sdumetz/node-deb-version-compare.git"
+  },
+  "keywords": [
+    "debian",
+    "deb",
+    "dpkg",
+    "apt-get",
+    "version",
+    "semver",
+    "compare"
+  ],
+  "author": "Sebastien Dumetz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sdumetz/node-deb-version-compare/issues"
+  },
+  "homepage": "https://github.com/sdumetz/node-deb-version-compare#readme"
+}
