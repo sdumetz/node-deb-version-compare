@@ -34,7 +34,10 @@ function compareStrings(){
   ]
   console.log("compare version strings")
   list.forEach(function(e){
-    assert(Version.prototype.compareStrings(e[0],e[1]) == 1,`Expect ${e[0]} to be greater than ${e[1]}`);
+    r1 = Version.prototype.compareStrings(e[0],e[1])
+    assert(r1 == 1,`Expect ${e[0]} to be greater than ${e[1]}. Got ${r1}`);
+    r2 = Version.prototype.compareStrings(e[1],e[0])
+    assert(r2 == -1,`Expect ${e[1]} to be smaller than ${e[0]}. Got ${r2} `);
     console.log("\t%s > %s",e[0],e[1])
   })
 
