@@ -1,6 +1,6 @@
 {
   "name": "deb-version-compare",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Compare Version according to debian policy",
   "main": "lib/index.js",
   "scripts": {
